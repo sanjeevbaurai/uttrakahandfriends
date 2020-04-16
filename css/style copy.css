@@ -1,0 +1,241 @@
+/*CSS STYLES */
+
+body {
+    font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+.selector-for-some-widget {
+    box-sizing: content-box;
+  }
+  h1 {
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+p {
+    display: block;
+    font-size: 1em;;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+  .wrap {
+   width: 100%;
+}
+.img{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    border: solid 1px #ccc;
+    border-radius: 4px;
+}
+img {
+    border-radius: 50%;
+    width: 90%;
+    height: 90%;
+    padding: 5%;
+}
+.img-producity  img{
+    border-radius: 4px;
+    width: 100%;
+}
+.extraSpace{
+    display: flex;
+}
+.creativity{
+    font-size: 1.5em;
+    padding: 10px;
+    color: #5514b4;
+}
+.productivity{
+    display: flex;flex-direction: column;align-items: center; width: 50%;
+}
+#header{
+   display: flex;
+   background-color: #5baeed;
+   width: 100%;
+   margin: 0 auto;
+}
+#headerImg{
+    background: url('../images/header.png');
+    height: 281px;
+    width: 54%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: #5baeed;
+    padding: 30px; ;
+}
+.center {
+    margin: auto;
+    width: 90%;
+    padding: 10px;
+}
+  footer {
+    position: absolute;
+    right: 10px;
+    font-size: 12px;
+    color: #ccc;
+}
+
+.infoLink{
+   display: flex;
+   justify-content: center;
+   font-size: 1.25em;
+}
+.hide {
+  display: none;
+}
+
+#days, #hours, #minutes, #seconds {
+    color: yellow;
+    font-size: 1.25em;
+}
+  
+  @media only screen and (max-width: 48rem) {
+    #header {
+      flex-direction: column;
+       width: 90%;
+       
+    }
+    #headerImg {
+         width: auto;
+         
+      }
+      .img{
+      width: 90%;
+      }
+      
+      .extraSpace{
+        flex-direction: column;
+      }
+      .productivity {
+        width: 100%;
+      }
+  }
+  
+  a {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none
+}
+
+ul.flip {
+    position: relative;
+    float: left;
+    margin: 5px;
+    width: 40px;
+    height: 90px;
+    font-size: 80px;
+}
+
+ul.flip li {
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+ul.flip li:first-child {
+    z-index: 2;
+}
+
+ul.flip li a {
+    display: block;
+    height: 100%;
+    perspective: 200px;
+}
+
+ul.flip li a div {
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    overflow: hidden;
+}
+
+ul.flip li a div.up {
+    transform-origin: 50% 100%;
+    top: 0;
+}
+
+ul.flip li a div.down {
+    transform-origin: 50% 0%;
+    bottom: 0;
+}
+
+ul.flip li a div div.num {
+    z-index: 1;
+    width: 100%;
+    height: 200%;
+    color: #ccc;
+    text-align: center;
+    background-color: #333;
+    border-radius: 6px;
+}
+
+ul.flip li a div.up div.num {
+    top: 0;
+}
+
+ul.flip li a div.down div.num {
+    bottom: 0;
+}
+
+div.play ul li.before {
+    z-index: 3;
+}
+
+div.play ul li.active {
+    animation: active .5s .5s linear both;
+    z-index: 2;
+}
+
+div.play ul li.active .down {
+    z-index: 2;
+    animation: turnDown .5s .5s linear both;
+}
+
+div.play ul li.before .up {
+    z-index: 2;
+    animation: turnUp .5s linear both;
+}
+
+@keyframes active {
+    0% {
+        z-index: 2;
+    }
+    5% {
+        z-index: 4;
+    }
+    100% {
+        z-index: 4;
+    }
+}
+
+@keyframes turnDown {
+    0% {
+        transform: rotateX(90deg);
+    }
+    100% {
+        transform: rotateX(0deg);
+    }
+}
+
+@keyframes turnUp {
+    0% {
+        transform: rotateX(0deg);
+    }
+    100% {
+        transform: rotateX(-90deg);
+    }
+}
